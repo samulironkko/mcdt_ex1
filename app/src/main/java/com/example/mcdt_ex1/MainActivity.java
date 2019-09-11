@@ -2,6 +2,7 @@ package com.example.mcdt_ex1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Button addCar = findViewById(R.id.add_button);
         Button editCar = findViewById(R.id.edit_button);
         Button removeCar = findViewById(R.id.remove_button);
+        final Button secondButton = findViewById(R.id.scnd_button);
         final EditText editText = findViewById(R.id.edit_text);
 
         getCars();
@@ -71,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
                         myListView.setAdapter(aa);
                     }
                 });
+            }
+        });
+
+        secondButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, secondActivity.class);
+                startActivity(intent);
             }
         });
 
